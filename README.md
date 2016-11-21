@@ -8,3 +8,11 @@ Semaphore实现的功能就类似厕所有5个坑，假如有10个人要上厕�
 Semaphore维护了当前访问的个数，提供同步机制，控制同时访问的个数。在数据结构中链表可以保存“无限”的节点，用Semaphore可以实现有限大小的链表。另外重入锁 ReentrantLock 也可以实现该功能，但实现上要复杂些。 
 
 CountDownLatch，一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
+主要方法
+ public CountDownLatch(int count);
+ public void countDown();
+ public void await() throws InterruptedException
+ 
+构造方法参数指定了计数的次数
+countDown方法，当前线程调用此方法，则计数减一
+awaint方法，调用此方法会一直阻塞当前线程，直到计时器的值为0
